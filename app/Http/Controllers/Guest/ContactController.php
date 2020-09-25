@@ -14,10 +14,7 @@ class ContactController extends Controller
     	$data = $request->except("_token");
 
     	Contact::insert($data);
-        \Session::flash('toastr', [
-            'type'  => 'success',
-            'message'   => 'yêu cầu của bạn đã được gửi'
-            ]);
+        \Toastr::success('Nội dung của bạn đã được gửi', 'Gửi thành công', ['toastr-header-right']);
 
         return redirect()->to('/');
         }

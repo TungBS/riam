@@ -10,6 +10,11 @@ class GuestController extends Controller {
 	public function __construct() {
 		$types = Type::all();
 		\View::share('types', $types);
+	
+		 /*\Session::flash('toastr', [
+            'type'  => 'success',
+            'message'   => 'Đơn hàng của bạn đã được lưu'
+            ]);*/
 	}
 
 	

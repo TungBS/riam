@@ -15,6 +15,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Bitter|Roboto:400,300,700|Roboto+Slab:300,400,700|Pacifico" rel="stylesheet" type="text/css" />
 	<script src="{{ asset('public/guest/js/libs/jquery-1.10.2.min.js') }}"></script>
 	<script src="{{ asset('public/guest/js/libs/retina-1.1.0.min.js') }}"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 	<!-- Các file css thêm -->
 	@yield('css')
 </head>
@@ -51,6 +52,8 @@
 	<script src="{{ asset('public/guest/js/libs/idangerous.swiper-2.4.min.js') }}"></script>
 	<script src="{{ asset('public/guest/js/front.js') }}"></script>
 	<!-- Các file js thêm -->
+	<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
 	@yield('script')
 </body>
 </html>

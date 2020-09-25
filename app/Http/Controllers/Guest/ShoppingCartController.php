@@ -13,10 +13,7 @@ class ShoppingCartController extends Controller
     	$data = $request->except("_token");
 
     	Transaction::insert($data);
-        \Session::flash('toastr', [
-            'type'  => 'success',
-            'message'   => 'Đơn hàng của bạn đã được lưu'
-            ]);
+       \Toastr::success('Khóa học của bạn đã được đăng ký', 'Đăng ký thành công', ['toastr-header-right']);
 
         return redirect()->to('/');
         }
