@@ -7,11 +7,12 @@
 		
 		<div class="unit one-quarter widget widget-contact-us">
 			<h4 class="widget-title">Liên hệ</h4>
-			<form action="javascript:;" method="post">
+			<form action="{{ route('post.contact.lien_he')}}" method="post">
+				@csrf
 				<fieldset>
-					<p><input type="text" name="" value="" placeholder="Họ tên" /></p>
-					<p><input type="email" name="" value="" placeholder="Địa chỉ email" /></p>
-					<p><textarea name="" placeholder="Nội dung"></textarea></p>
+					<p><input type="text" name="ct_name" required="" value="" placeholder="Họ tên" /></p>
+					<p><input type="email" name="ct_email" required="" value="" placeholder="Địa chỉ email" /></p>
+					<p><textarea name="ct_content" required="" placeholder="Nội dung"></textarea></p>
 					<p><input type="submit" value="Gửi đi" /></p>
 				</fieldset>
 			</form>

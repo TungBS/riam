@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 25, 2020 lúc 07:47 AM
+-- Thời gian đã tạo: Th9 25, 2020 lúc 09:12 AM
 -- Phiên bản máy phục vụ: 10.4.13-MariaDB
 -- Phiên bản PHP: 7.4.8
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `riam`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ct_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ct_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ct_content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `ct_name`, `ct_email`, `ct_content`, `created_at`, `updated_at`) VALUES
+(1, 'dsad', 'manh2k@gmail.com', 'dádas', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -76,7 +98,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2020_09_24_032437_create_types_table', 1),
 (5, '2020_09_24_032226_create_courses_table', 2),
 (6, '2020_09_24_162851_create_transactions_table', 3),
-(7, '2020_09_24_173143_create_orders_table', 4);
+(7, '2020_09_24_173143_create_orders_table', 4),
+(8, '2020_09_25_062033_create_contacts_table', 5);
 
 -- --------------------------------------------------------
 
@@ -185,6 +208,12 @@ CREATE TABLE `users` (
 --
 
 --
+-- Chỉ mục cho bảng `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `courses`
 --
 ALTER TABLE `courses`
@@ -235,6 +264,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT cho bảng `courses`
 --
 ALTER TABLE `courses`
@@ -244,7 +279,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
