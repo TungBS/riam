@@ -19,7 +19,7 @@
 
     <!-- Select2 để thêm từ khóa cho sản phẩm -->
     <link rel="stylesheet" href="{{ asset('public/admin/plugins/select2/select2.min.css') }}">
-
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <!-- Các file css thêm -->
     @yield('css')
   </head>
@@ -81,6 +81,24 @@
                 <span>Quản lý Khóa học</span>
                 <span class="label label-primary pull-right">
                   {{\DB::table('courses')->count()}}
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="{{route('admin.transaction.index')}}">
+                <i class="fa fa-database"></i>
+                <span>Quản lý Đơn hàng</span>
+                <span class="label label-primary pull-right">
+                  {{\DB::table('transactions')->count()}}
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="{{route('admin.contact.index')}}">
+                <i class="fa fa-phone"></i>
+                <span>Quản lý Liên hệ</span>
+                <span class="label label-primary pull-right">
+                  {{\DB::table('contacts')->count()}}
                 </span>
               </a>
             </li>

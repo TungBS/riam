@@ -28,4 +28,13 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function () {
 
 	    Route::post('ckeditor/upload', 'CourseController@upload')->name('ckeditor.upload');
 	});
+
+	Route::group(['prefix'=>'transaction'], function () { 
+		Route::get('', 'AdminTransactionController@index')->name('admin.transaction.index'); 
+		Route::get('delete/{id}', 'AdminTransactionController@delete')->name('admin.transaction.delete'); 
+	});
+
+	Route::group(['prefix'=>'contact'], function () { 
+		Route::get('', 'AdminContactController@index')->name('admin.contact.index'); 
+		Route::get('delete/{id}', 'AdminContactController@delete')->name('admin.contact.delete'); });
 });
