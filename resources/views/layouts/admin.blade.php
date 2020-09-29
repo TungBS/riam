@@ -102,6 +102,24 @@
                 </span>
               </a>
             </li>
+            <li>
+              <a href="{{route('admin.menu.index')}}">
+                <i class="fa fa-phone"></i>
+                <span>Danh mục bài viết</span>
+                <span class="label label-primary pull-right">
+                  {{\DB::table('menus')->count()}}
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="{{route('admin.article.index')}}">
+                <i class="fa fa-phone"></i>
+                <span>Bài viết</span>
+                <span class="label label-primary pull-right">
+                  {{\DB::table('articles')->count()}}
+                </span>
+              </a>
+            </li>
           </ul>
         </section>
       </aside>

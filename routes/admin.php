@@ -36,5 +36,32 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function () {
 
 	Route::group(['prefix'=>'contact'], function () { 
 		Route::get('', 'AdminContactController@index')->name('admin.contact.index'); 
-		Route::get('delete/{id}', 'AdminContactController@delete')->name('admin.contact.delete'); });
+		Route::get('delete/{id}', 'AdminContactController@delete')->name('admin.contact.delete');
+	});
+
+	Route::group(['prefix' => 'menu'], function(){
+            Route::get('','AdminMenuController@index')->name('admin.menu.index');
+            Route::get('create','AdminMenuController@create')->name('admin.menu.create');
+            Route::post('create','AdminMenuController@store');
+
+            Route::get('update/{id}','AdminMenuController@edit')->name('admin.menu.update');
+            Route::post('update/{id}','AdminMenuController@update');
+
+            Route::get('active/{id}','AdminMenuController@active')->name('admin.menu.active');
+            Route::get('hot/{id}','AdminMenuController@hot')->name('admin.menu.hot');
+            Route::get('delete/{id}','AdminMenuController@delete')->name('admin.menu.delete');
+        });
+
+	Route::group(['prefix' => 'article'], function(){
+            Route::get('','AdminArticleController@index')->name('admin.article.index');
+            Route::get('create','AdminArticleController@create')->name('admin.article.create');
+            Route::post('create','AdminArticleController@store');
+
+            Route::get('update/{id}','AdminArticleController@edit')->name('admin.article.update');
+            Route::post('update/{id}','AdminArticleController@update');
+
+            Route::get('active/{id}','AdminArticleController@active')->name('admin.article.active');
+            Route::get('hot/{id}','AdminArticleController@hot')->name('admin.article.hot');
+            Route::get('delete/{id}','AdminArticleController@delete')->name('admin.article.delete');
+        });
 });
